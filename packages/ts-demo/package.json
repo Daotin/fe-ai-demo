@@ -1,0 +1,20 @@
+{
+  "name": "@fe-ai-demo/ts-demo",
+  "version": "1.0.0",
+  "description": "简单的TypeScript示例包",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  }
+}
