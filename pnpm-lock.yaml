@@ -12,6 +12,37 @@ importers:
         specifier: ^2.4.4
         version: 2.4.4
 
+  packages/mcp-cmp:
+    dependencies:
+      '@modelcontextprotocol/sdk':
+        specifier: ^1.7.0
+        version: 1.7.0
+      express:
+        specifier: ^5.0.1
+        version: 5.0.1
+      morgan:
+        specifier: ^1.10.0
+        version: 1.10.0
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
+    devDependencies:
+      '@types/express':
+        specifier: ^5.0.1
+        version: 5.0.1
+      '@types/morgan':
+        specifier: ^1.9.9
+        version: 1.9.9
+      '@types/node':
+        specifier: ^22.13.10
+        version: 22.13.13
+      rimraf:
+        specifier: ^5.0.5
+        version: 5.0.10
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+
   packages/mcp-demo:
     dependencies:
       '@modelcontextprotocol/sdk':
