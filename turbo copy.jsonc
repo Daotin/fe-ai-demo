@@ -1,0 +1,29 @@
+{
+  // 用于编辑器支持
+  "$schema": "https://turbo.build/schema.json",
+  // 定义任务及其依赖和输出
+  "tasks": {
+    "build": {
+      // dependsOn：指定必须先完成的任务，例如 ["^build"] 表示依赖于所有依赖包的 build 任务。
+      "dependsOn": ["^build"],
+      // outputs 指定任务的输出文件或目录，用于缓存，例如 ["dist/**", ".next/**"]。
+      "outputs": ["dist/**"]
+      // cache：布尔值，控制是否缓存任务，false 表示不缓存（如部署任务）。
+      // "cache": false
+      // persistent：布尔值，标记长运行任务（如开发服务器），确保不会依赖于此类任务。 比如dev的话，需要设置为true
+      // "persistent": false
+    },
+    "clean": {
+      "dependsOn": ["^clean"],
+      "cache": false
+    }
+    // "dev": {
+    //   "persistent": true,
+    //   "cache": false
+    // }
+  }
+  // globalDependencies 指定全局依赖
+  // 是一个数组，列出文件或目录，当这些文件更改时，所有任务都会失效缓存。
+  // 例如 ["**/*.env"] 表示环境变量文件的变化会触发缓存失效。
+  // "globalDependencies": ["**/*.env"]
+}
