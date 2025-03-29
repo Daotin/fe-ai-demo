@@ -3,26 +3,53 @@
   "version": "0.0.1",
   "description": "MCP 组件服务",
   "type": "module",
-  "main": "dist/index-command.js",
-  "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "lint": "tsc --noEmit"
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "bin": {
+    "mcp-cmp": "dist/cli.js"
   },
-  "keywords": [],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:tsc": "tsc",
+    "clean": "rimraf dist",
+    "copy-docs": "copyfiles -u 1 docs/**/* dist/docs",
+    "lint": "tsc --noEmit",
+    "start": "node dist/cli.js start",
+    "serve": "node dist/cli.js serve",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "component",
+    "cli"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
+    "commander": "^11.1.0",
     "express": "^5.0.1",
     "morgan": "^1.10.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/express": "^5.0.1",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.13.10",
+    "copyfiles": "^2.4.1",
     "rimraf": "^5.0.5",
+    "rollup": "^4.37.0",
     "typescript": "^5.8.2"
   }
 }

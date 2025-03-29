@@ -1,12 +1,16 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDir": ".",
     "outDir": "./dist",
     "sourceMap": false,
     "declaration": false,
-    "declarationMap": false
+    "declarationMap": false,
+    "baseUrl": ".",
+    "paths": {
+      "@mcp-cmp/*": ["./*"]
+    }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "utils/**/*", "cli.ts"],
   "exclude": ["node_modules", "dist"]
 }
